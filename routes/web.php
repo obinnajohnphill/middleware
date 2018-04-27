@@ -25,7 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/articles', 'ArticlesController@index');
 
-
 Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
 {
     Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');

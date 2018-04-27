@@ -17,7 +17,7 @@
                     You are logged in! as <strong>{{ strtoupper(Auth::user()->type) }}</strong>
                 <br>
 
-                    Further message here....
+                        <div align="center"><a href="{{ url('/') }}/articles">Send API Request</a></div>
 
                 </div>
 
