@@ -23,6 +23,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/articles', 'ArticlesController@index');
+
 
 Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
 {
