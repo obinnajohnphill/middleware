@@ -14,12 +14,60 @@
                         </div>
                     @endif
 
+                        @if(session()->has('message'))
+                            <h6 style = "color: green">{{session()->get('message')}}</h6>
+                        @endif
+
                     You are logged in! as <strong>{{ strtoupper(Auth::user()->type) }}</strong>
-                <br>
+                <br><br>
 
-                        <div align="center"><a href="{{ url('/') }}/articles">Send API Request</a></div>
+                        <div align="left"><a href="{{ url('/') }}/articles">Send API Request</a></div>
 
-                </div>
+                </div><br>
+
+                <form class="form-horizontal" method="post" action="/mail"  enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label for="name" class="col-lg-2 control-label">
+                            Name
+                        </label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="name"  name="name" placeholder="Enter the name of a person">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-lg-2 control-label">
+                            Email Address
+                        </label>
+                        <div class="col-lg-10">
+                            <input type="email" class="form-control" name="email" placeholder="Enter email address to send">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="col-lg-2 control-label">
+                           Subject
+                        </label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" name="subject" placeholder="Enter a subject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="col-lg-2 control-label">
+                           Message
+                        </label>
+                        <div class="col-lg-10">
+                            <input type="textarea" class="form-control" id="message" name="message" placeholder="Enter a message" rows="6" cols="10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="reset" class="btn btn-default">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Send</button>
+
+                        </div>
+                    </div>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                </form>
 
             </div>
         </div>

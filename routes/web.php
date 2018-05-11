@@ -25,6 +25,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/articles', 'ArticlesController@index');
 
+Route::get('/email', 'EmailController@sendEmail');
+
+Route::post('/mail','ProcessFormController@processForm');
+
 Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
 {
     Route::match(['get', 'post'], '/adminOnlyPage/', 'HomeController@admin');
