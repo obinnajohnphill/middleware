@@ -1,6 +1,10 @@
 
 Hello,
 
-This is blah blah blah
+{{$store['name']}}
 
-Thanks
+{{$store['message']}}
+
+Thank you.
+
+The Team.

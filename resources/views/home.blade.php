@@ -32,15 +32,15 @@
                             Name
                         </label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="name"  name="name" placeholder="Enter the name of a person">
+                            <input type="text" class="form-control" id="name"  name="name" placeholder="Enter the name of addressee">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email" class="col-lg-2 control-label">
-                            Email Address
+                            To Email
                         </label>
                         <div class="col-lg-10">
-                            <input type="email" class="form-control" name="email" placeholder="Enter email address to send">
+                            <input type="email" class="form-control" name="email" placeholder="Enter email address to send to">
                         </div>
                     </div>
                     <div class="form-group">
@@ -57,6 +57,14 @@
                         </label>
                         <div class="col-lg-10">
                             <input type="textarea" class="form-control" id="message" name="message" placeholder="Enter a message" rows="6" cols="10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="from_email" class="col-lg-2 control-label">
+                            From Email
+                        </label>
+                        <div class="col-lg-10">
+                            <input type="email" class="form-control" id="from_email"  name="from_email" placeholder="Enter email address sent from">
                         </div>
                     </div>
                     <div class="form-group">

@@ -11,21 +11,16 @@ class SendMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $data;
+
       /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($request)
     {
-
-    }
-
-
-    public function parseMessage ($request){
-
-     //$this->request = $request;
-
+      $this->data = $request;
     }
 
     /**
@@ -35,10 +30,15 @@ class SendMailable extends Mailable
      */
     public function build()
     {
+        //dd($this->data);
 
-        return $this->from('example@example.com')
-            ->subject("Heee")
-            ->view('email');
+        $request = $this->data;
+
+        $array = array('message'=>$request->input('message'), 'name' => $request->input('name'));
+
+        return $this->from($request->input('from_email'))
+            ->subject($request->input('subject'))
+            ->view('email')->with('store', $array); ;
     }
 
 }
