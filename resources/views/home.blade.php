@@ -22,6 +22,7 @@
                 <br><br>
 
                         <div align="left"><a href="{{ url('/') }}/articles">Send API Request</a></div>
+                        <div align="right"><a href="{{ url('/') }}/horizon" target="_blank">View Queue Jobs</a></div>
 
                 </div><br>
 

@@ -30,8 +30,6 @@ class SendMailable extends Mailable
      */
     public function build()
     {
-        //dd($this->data);
-
         $request = $this->data;
 
         $array = array('message'=>$request->input('message'), 'name' => $request->input('name'));

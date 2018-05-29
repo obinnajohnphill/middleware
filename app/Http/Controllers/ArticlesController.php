@@ -10,6 +10,8 @@ class ArticlesController extends Controller
 {
     public function index() {
 
+        Cache::flush();
+
         $time = 24*60;
 
         $articles = Cache::remember('articles', $time, function() {
