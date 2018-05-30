@@ -9,7 +9,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailable;
-use App\User;
+//use App\User;
+
 
 class SendEmailJob implements ShouldQueue
 {
@@ -35,13 +36,16 @@ class SendEmailJob implements ShouldQueue
     {
         Mail::to($request->input('email'))
             ->send(new SendMailable($request));
-        $this->tags();
 
     }
+
+    /*
 
     public function tags()
     {
         $users = User::all()->pluck('id');
         return ['email', 'user:'.$users[0]];
     }
+
+    */
 }

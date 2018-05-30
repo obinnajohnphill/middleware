@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Mail\SendMailable;
 use App\Jobs\SendEmailJob;
 
 use Illuminate\Support\Facades\Redirect;
