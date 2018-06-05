@@ -12,7 +12,7 @@ class EmailController extends Controller
 
     public function sendEmail()
     {
-        $emailJob = (new SendEmailJob())->delay(Carbon::now()->addSeconds(3));
+        $emailJob = (new SendEmailJob())->delay(Carbon::now()->addSeconds(1));
         dispatch($emailJob);
 
         return Redirect::to('home')->with('message', 'Email successfully sent!');

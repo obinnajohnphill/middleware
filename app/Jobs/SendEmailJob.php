@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailable;
-//use App\User;
+
 
 
 class SendEmailJob implements ShouldQueue
@@ -39,13 +39,4 @@ class SendEmailJob implements ShouldQueue
 
     }
 
-    /*
-
-    public function tags()
-    {
-        $users = User::all()->pluck('id');
-        return ['email', 'user:'.$users[0]];
-    }
-
-    */
 }
