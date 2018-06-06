@@ -74,7 +74,7 @@ return [
         'production' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
+                'queue' => ['default','emails'],
                 'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 3,
@@ -84,7 +84,7 @@ return [
         'local' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
+                'queue' => ['default','emails'],
                 'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 3,

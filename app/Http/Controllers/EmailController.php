@@ -13,7 +13,7 @@ class EmailController extends Controller
     public function sendEmail()
     {
         $emailJob = (new SendEmailJob())->delay(Carbon::now()->addSeconds(3));
-        dispatch($emailJob);
+        dispatch($emailJob)->onQueue('emails');
 
         return Redirect::to('home')->with('message', 'Email successfully sent!');
     }
