@@ -30,13 +30,11 @@ class SendMailable extends Mailable
      */
     public function build()
     {
-        $request = $this->data;
+        $array = array('message'=> $this->data['message'], 'name' => $this->data['name']);
 
-        $array = array('message'=>$request->input('message'), 'name' => $request->input('name'));
-
-        return $this->from($request->input('from_email'))
-            ->subject($request->input('subject'))
-            ->view('email')->with('store', $array); ;
+        return $this->from($this->data['from_email'])
+            ->subject($this->data['subject'])
+            ->view('email')->with('store', $array);
     }
 
 }

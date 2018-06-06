@@ -18,7 +18,7 @@ class ArticlesController extends Controller
             Cache::flush();
             echo "Database is empty";
         }else{
-            $time = 24*60;
+            $time = 1*60;
             $articles = Cache::remember('articles', $time, function() {
                 return Articles::all();
             });
